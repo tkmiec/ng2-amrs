@@ -4,6 +4,7 @@ import { HashPassService } from './hash-pass.service';
 
 describe('HashPassService', () => {
   let service;
+  let testPass = 'password123';
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [HashPassService]
@@ -15,7 +16,7 @@ describe('HashPassService', () => {
   }));
 
   it('should hash a password', inject( [HashPassService], () => {
-    let hashed = service.hashPassword('password123');
-    expect(hashed).not.toEqual('password123', 'hashPassword()');
+    let hashed = service.hashPassword(testPass);
+    expect(hashed).not.toEqual(testPass, 'hashPassword()');
   }));
 });
