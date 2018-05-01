@@ -16,7 +16,6 @@ describe('HashPassService', () => {
   }));
 
   it('should hash a password', inject( [HashPassService], () => {
-    let hashed = service.hashPassword(testPass);
-    expect(hashed).not.toEqual(testPass, 'hashPassword()');
+    expect(testPass).not.toEqual(service.hashPassword(testPass), 'hashPassword()');
   }));
 });

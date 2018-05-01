@@ -8,6 +8,6 @@ export class HashPassService {
 
   public hashPassword(password: string ) {
     this.hash = CryptoJS.AES.encrypt(password, 'testPassphrase');
-    console.log(this.hash);
+    return
   }
 }
